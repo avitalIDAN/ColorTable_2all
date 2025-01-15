@@ -3,5 +3,6 @@
     ColorName NVARCHAR(50) NOT NULL,
     Price FLOAT NOT NULL,
     OrderIndex INT NOT NULL,
-    InStock BIT NOT NULL
+    InStock BIT NOT NULL,
+    ColorCode NVARCHAR(7) NOT NULL
 );
