@@ -1,4 +1,13 @@
-﻿--for create TABLE Colors  in Database = ColorsDB   
+﻿IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'ColorsDB')
+BEGIN
+    CREATE DATABASE ColorsDB;
+END;
+GO
+
+USE ColorsDB;
+GO
+
+--for create TABLE Colors  in Database = ColorsDB   
 
 CREATE TABLE Colors (
     Id INT IDENTITY(1,1) PRIMARY KEY,
