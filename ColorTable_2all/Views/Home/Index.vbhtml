@@ -40,7 +40,7 @@ End Code
         <input type="text" id="colorName" name="colorName" placeholder="הכנס שם הצבע" />
 
         <label for="colorPicker">הצבע:</label>
-        <input type="color" id="colorPicker" name="colorHex" value="#ff0000" />
+        <input type="color" id="colorPicker" name="colorHex" value="#000000" />
 
         <br />
         <label for="price">מחיר:</label>
@@ -156,7 +156,6 @@ End Code
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    alert('שגיאה: ' + data.message); 
                     loadColors(); 
                 } else {
                     alert('שגיאה: ' + data.message); 
@@ -164,6 +163,12 @@ End Code
             })
             .catch(error => console.error('Error:', error));
 
+        document.getElementById('idColor').textContent = '';
+        document.getElementById('colorName').value = '';
+        document.getElementById('colorPicker').value = '#000000';
+        document.getElementById('price').value = '';
+        document.getElementById('order').value = '';
+        document.getElementById('inStock').checked = false;
         document.getElementById('editButton').disabled = true;
     }
 
